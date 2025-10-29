@@ -1,5 +1,6 @@
 import 'package:bmi/view/widgets/custom_app_bar.dart';
-import 'package:bmi/view/widgets/custom_gender_card.dart';
+import 'package:bmi/view/widgets/gender_section.dart';
+import 'package:bmi/view/widgets/height_section.dart';
 import 'package:flutter/material.dart';
 
 class BmiView extends StatelessWidget {
@@ -18,20 +19,9 @@ class BmiView extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(height: 16),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: CustomGenderCard(icon: Icons.male, text: 'MALE'),
-                      ),
-                      SizedBox(width: 24),
-                      Expanded(
-                        child: CustomGenderCard(
-                          icon: Icons.female,
-                          text: 'FEMALE',
-                        ),
-                      ),
-                    ],
-                  ),
+                  GenderSection(),
+                  SizedBox(height: 24),
+                  HeightSection(),
                 ],
               ),
             ),

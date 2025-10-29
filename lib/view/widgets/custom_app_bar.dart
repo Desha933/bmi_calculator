@@ -6,8 +6,11 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: const Text('BMI CALCULATOR'),
-      backgroundColor: Color(0xff111111),
+      title: const Text(
+        'BMI CALCULATOR',
+        style: TextStyle(color: Colors.white),
+      ),
+      backgroundColor: Color(0xff04061d),
     );
   }
 }
