@@ -1,6 +1,8 @@
 import 'package:bmi/view/widgets/custom_app_bar.dart';
+import 'package:bmi/view/widgets/custom_button.dart';
 import 'package:bmi/view/widgets/gender_section.dart';
 import 'package:bmi/view/widgets/height_section.dart';
+import 'package:bmi/view/widgets/weight_and_age_section.dart';
 import 'package:flutter/material.dart';
 
 class BmiView extends StatelessWidget {
@@ -14,15 +16,21 @@ class BmiView extends StatelessWidget {
         child: Column(
           children: [
             CustomAppBar(),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Column(
-                children: [
-                  SizedBox(height: 16),
-                  GenderSection(),
-                  SizedBox(height: 24),
-                  HeightSection(),
-                ],
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
+                  children: [
+                    SizedBox(height: 16),
+                    Expanded(child: GenderSection()),
+                    SizedBox(height: 24),
+                    Expanded(child: HeightSection()),
+                    SizedBox(height: 24),
+                    Expanded(child: WeightAndAgeSection()),
+                    SizedBox(height: 24),
+                    Custom_button(),
+                  ],
+                ),
               ),
             ),
           ],

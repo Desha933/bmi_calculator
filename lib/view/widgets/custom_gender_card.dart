@@ -22,19 +22,18 @@ class CustomGenderCard extends StatelessWidget {
           color: isActive ? Color(0xff17172f) : Color(0xff090b24),
           borderRadius: BorderRadius.circular(8),
         ),
-        child: Center(
-          child: Column(
-            children: [
-              Icon(icon, size: 50, color: Colors.white),
-              Text(
-                text,
-                style: TextStyle(
-                  fontSize: 18,
-                  color: isActive ? Color(0xff8d8c9d) : Color(0xff777a8a),
-                ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, size: 50, color: Colors.white),
+            Text(
+              text,
+              style: TextStyle(
+                fontSize: 18,
+                color: isActive ? Color(0xff8d8c9d) : Color(0xff777a8a),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

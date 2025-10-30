@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
-class HeightSection extends StatelessWidget {
+class HeightSection extends StatefulWidget {
   const HeightSection({super.key});
 
+  @override
+  State<HeightSection> createState() => _HeightSectionState();
+}
+
+class _HeightSectionState extends State<HeightSection> {
+  double height = 0;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -14,15 +20,20 @@ class HeightSection extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('HEIGHT', style: TextStyle(color: Color(0xff898b9b))),
+                SizedBox(height: 10),
+                Text(
+                  'HEIGHT',
+                  style: TextStyle(fontSize: 18, color: Color(0xff898b9b)),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.baseline,
                   textBaseline: TextBaseline.alphabetic,
                   children: [
                     Text(
-                      '174',
+                      '${height.round()}',
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
@@ -31,6 +42,18 @@ class HeightSection extends StatelessWidget {
                     ),
                     Text('cm', style: TextStyle(color: Color(0xff898b9b))),
                   ],
+                ),
+                SliderTheme(
+                  data: SliderThemeData(activeTrackColor: Colors.red),
+                  child: Slider(
+                    min: 0,
+                    max: 200,
+                    value: height,
+                    onChanged: (value) {
+                      height = value;
+                      setState(() {});
+                    },
+                  ),
                 ),
               ],
             ),
